@@ -65,7 +65,7 @@ class IndexHandler extends Handler {
 				if ($enableAnnouncementsHomepage) {
 					$numAnnouncementsHomepage = $journal->getSetting('numAnnouncementsHomepage');
 					$announcementDao = DAORegistry::getDAO('AnnouncementDAO');
-					$announcements =& $announcementDao->getNumAnnouncementsNotExpiredByAssocId(ASSOC_TYPE_JOURNAL, $journal->getId(), $numAnnouncementsHomepage);
+					$announcements = $announcementDao->getNumAnnouncementsNotExpiredByAssocId(ASSOC_TYPE_JOURNAL, $journal->getId(), $numAnnouncementsHomepage);
 					$templateMgr->assign('announcements', $announcements->toArray());
 					$templateMgr->assign('enableAnnouncementsHomepage', $enableAnnouncementsHomepage);
 					$templateMgr->assign('numAnnouncementsHomepage', $numAnnouncementsHomepage);
